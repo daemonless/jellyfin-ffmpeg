@@ -1,0 +1,37 @@
+name: jellyfin-ffmpeg
+
+x-daemonless:
+  title: "Jellyfin FFmpeg"
+  icon: ":material-video-box:"  # https://pictogrammers.com/library/mdi/
+  category: "Utilities"
+  user: "root"  # one-shot CLI ffmpeg; runs as root, override with `--user` if desired
+  description: |-
+    FFmpeg with the Jellyfin patch set for HDR tone mapping (the SIMD-optimized
+    tonemapx / libplacebo filters) on FreeBSD. Ships both the 7.x and 8.x lines:
+    `jellyfin-ffmpeg` (= v7, the default) / `jellyfin-ffmpeg7` / `jellyfin-ffmpeg8`
+    (and matching `*probe`) are all on PATH. Standalone CLI image, not a service.
+  upstream_url: "https://github.com/jellyfin/jellyfin-ffmpeg"
+  web_url: "https://jellyfin.org/"
+  community: "Discord:https://discord.gg/Kb9tkhecZT"
+  appjail: false
+
+  docs:
+    usage: |-
+      Run it like ffmpeg itself; the entrypoint is the jellyfin-ffmpeg binary:
+
+          podman run --rm -v "$PWD:/work" -w /work \
+            ghcr.io/daemonless/jellyfin-ffmpeg:latest -i input.mkv output.mp4
+
+      Check the build:
+
+          podman run --rm ghcr.io/daemonless/jellyfin-ffmpeg:latest -version
+
+# One-shot CLI tool, not a supervised service. Kept here only as a run example.
+services:
+  jellyfin-ffmpeg:
+    image: ghcr.io/daemonless/jellyfin-ffmpeg:latest
+    container_name: jellyfin-ffmpeg
+    volumes:
+      - /path/to/media:/work
+    working_dir: /work
+    command: ["-version"]

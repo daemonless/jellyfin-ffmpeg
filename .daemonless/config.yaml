@@ -1,0 +1,17 @@
+build:
+  variants:
+    - tag: "7"
+      args:
+        JFFMPEG_PORT: jellyfin-ffmpeg7
+      aliases: ["latest"]
+      default: true
+    - tag: "8"
+      args:
+        JFFMPEG_PORT: jellyfin-ffmpeg8
+
+cit:
+  mode: command
+  command: ["-version"]
+  expect_exit: 0
+  expect_output: "ffmpeg version .*Jellyfin"
+  puid: false
