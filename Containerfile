@@ -57,6 +57,8 @@ LABEL org.opencontainers.image.title="Jellyfin FFmpeg" \
       org.opencontainers.image.vendor="daemonless" \
       org.opencontainers.image.authors="daemonless" \
       io.daemonless.category="Utilities" \
+      io.daemonless.upstream-url="https://api.github.com/repos/jellyfin/jellyfin-ffmpeg/releases/latest" \
+      io.daemonless.upstream-jq=".tag_name" \
       io.daemonless.arch="${FREEBSD_ARCH}"
 
 # Install the .pkg (auto-resolves runtime deps -> SBOM) and expose a generic
