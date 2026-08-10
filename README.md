@@ -42,64 +42,12 @@ services:
     restart: unless-stopped
 ```
 
-### AppJail Director
-**.env**:
-
-```
-# .env
-
-DIRECTOR_PROJECT=jellyfin-ffmpeg
-```
-
-**appjail-director.yml**:
-
-```yaml
-# appjail-director.yml
-
-options:
-  - virtualnet: ':<random> default'
-  - nat:
-services:
-  jellyfin-ffmpeg:
-    name: jellyfin_ffmpeg
-    options:
-      - container: 'boot args:--pull'
-    volumes:
-      - jellyfin-ffmpeg_work: /work
-volumes:
-  jellyfin-ffmpeg_work:
-    device: '/path/to/containers/jellyfin-ffmpeg/work'
-```
-
-**Makejail**:
-
-```
-# Makejail
-
-ARG tag=latest
-
-OPTION overwrite=force
-OPTION from=ghcr.io/daemonless/jellyfin-ffmpeg:${tag}
-```
-
 ### Podman CLI
 
 ```bash
 podman run -d --name jellyfin-ffmpeg \
   -v /path/to/containers/jellyfin-ffmpeg/work:/work \
   ghcr.io/daemonless/jellyfin-ffmpeg:latest
-```
-
-### AppJail
-
-```bash
-appjail oci run -Pd \
-  -o overwrite=force \
-  -o container="args:--pull" \
-  -o virtualnet=":<random> default" \
-  -o nat \
-  -o fstab="/path/to/containers/jellyfin-ffmpeg/work /work <pseudofs>" \
-  ghcr.io/daemonless/jellyfin-ffmpeg:latest jellyfin-ffmpeg
 ```
 
 ### Ansible
