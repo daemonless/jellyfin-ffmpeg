@@ -22,7 +22,7 @@ tonemapx / libplacebo filters) on FreeBSD. Ships both the 7.x and 8.x lines:
 ## Version Tags
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
-| `7` / `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
+| `7` / `latest` | **Upstream Binary**. Built from official release. | Most users — recommended. |
 | `8` | **Upstream Binary**. Built from official release. | Alternative build. |
 
 ## Prerequisites
@@ -71,7 +71,7 @@ podman run -d --name jellyfin-ffmpeg \
 |------|-------------|
 | `/work` |  |
 
-**Architectures:** amd64
+**Architectures:** amd64, aarch64
 **User:** `root` (UID/GID via PUID/PGID, defaults to 1000:1000)
 **Base:** FreeBSD 15.1
 
