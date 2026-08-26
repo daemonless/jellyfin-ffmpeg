@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-11T13:12:47Z",
+  "generated": "2026-08-26T08:11:41Z",
   "image": "jellyfin-ffmpeg",
   "tags": {
     "7-amd64": {
       "app_version": "7.1.4.3",
       "arch": "amd64",
-      "generated": "2026-08-11T13:10:11Z",
+      "generated": "2026-08-26T08:09:22Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -302,7 +302,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.125"
+            "version": "3.126.1"
           },
           {
             "licenses": [
@@ -931,7 +931,7 @@
               "BSD3CLAUSE"
             ],
             "name": "openexr",
-            "version": "3.4.13_1"
+            "version": "3.4.15"
           },
           {
             "licenses": [
@@ -1023,7 +1023,7 @@
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.13_3"
+            "version": "3.12.14"
           },
           {
             "licenses": [
@@ -1252,7 +1252,7 @@
     "8-amd64": {
       "app_version": "8.1.2.2_1",
       "arch": "amd64",
-      "generated": "2026-08-11T13:11:13Z",
+      "generated": "2026-08-26T08:10:30Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1549,7 +1549,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.125"
+            "version": "3.126.1"
           },
           {
             "licenses": [
@@ -2178,7 +2178,7 @@
               "BSD3CLAUSE"
             ],
             "name": "openexr",
-            "version": "3.4.13_1"
+            "version": "3.4.15"
           },
           {
             "licenses": [
@@ -2270,7 +2270,7 @@
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.13_3"
+            "version": "3.12.14"
           },
           {
             "licenses": [

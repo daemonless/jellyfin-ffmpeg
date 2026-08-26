@@ -39,8 +39,11 @@ services:
     container_name: jellyfin-ffmpeg
     volumes:
       - "/path/to/containers/jellyfin-ffmpeg/work:/work"
-    restart: unless-stopped
+    # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
+    restart: always
 ```
+
+Save as `compose.yaml`, then run `podman-compose up -d`.
 
 ### Podman CLI
 
@@ -48,6 +51,29 @@ services:
 podman run -d --name jellyfin-ffmpeg \
   -v /path/to/containers/jellyfin-ffmpeg/work:/work \
   ghcr.io/daemonless/jellyfin-ffmpeg:latest
+```
+
+Save as `run.sh`, then run `sh run.sh`.
+
+### Bastille
+
+> [!WARNING]
+> Bastille's OCI support is **experimental**. It requires `buildah`, shares the host network stack (`inherit`), and persists image-declared volumes under `--data-path`.
+
+```yaml
+services:
+  jellyfin-ffmpeg:
+    image: "ghcr.io/daemonless/jellyfin-ffmpeg:latest"
+    container_name: jellyfin-ffmpeg
+    network_mode: host  # jail shares host networking
+```
+
+Save as `podman-compose.yml`, then run `bastille up`. Or via CLI:
+
+```bash
+bastille create -O \
+  --data-path /path/to/containers/jellyfin-ffmpeg \
+  jellyfin-ffmpeg ghcr.io/daemonless/jellyfin-ffmpeg:latest inherit
 ```
 
 ### Ansible
@@ -62,6 +88,8 @@ podman run -d --name jellyfin-ffmpeg \
     volumes:
       - "/path/to/containers/jellyfin-ffmpeg/work:/work"
 ```
+
+Save as `jellyfin-ffmpeg-deploy.yaml`, then run `ansible-playbook jellyfin-ffmpeg-deploy.yaml`.
 
 ## Parameters
 
