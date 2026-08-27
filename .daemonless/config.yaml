@@ -4,11 +4,13 @@ build:
     - aarch64
   variants:
     - tag: "7"
+      containerfile: Containerfile.pkg
       args:
         JFFMPEG_PORT: jellyfin-ffmpeg7
       aliases: ["latest"]
       default: true
     - tag: "8"
+      containerfile: Containerfile
       args:
         JFFMPEG_PORT: jellyfin-ffmpeg8
 

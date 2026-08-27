@@ -1,0 +1,36 @@
+ARG BASE_VERSION=15-latest
+ARG FREEBSD_ARCH=amd64
+# jellyfin-ffmpeg7 ships as an official FreeBSD pkg (multimedia/jellyfin-ffmpeg7)
+# in the *latest* branch, so the :7 line installs it directly instead of
+# compiling the overlay port from source. base:15-latest is required because the
+# pkg is not in the quarterly repo. The :8 line has no pkg yet -> Containerfile.
+ARG JFFMPEG_PORT=jellyfin-ffmpeg7
+
+FROM ghcr.io/daemonless/base:${BASE_VERSION}
+ARG JFFMPEG_PORT
+
+LABEL org.opencontainers.image.title="Jellyfin FFmpeg" \
+      org.opencontainers.image.description="FFmpeg with Jellyfin patches for HDR tone mapping (tonemapx/libplacebo) on FreeBSD" \
+      org.opencontainers.image.source="https://github.com/daemonless/jellyfin-ffmpeg" \
+      org.opencontainers.image.url="https://github.com/jellyfin/jellyfin-ffmpeg" \
+      org.opencontainers.image.licenses="GPL-2.0-or-later AND LGPL-2.1-or-later" \
+      org.opencontainers.image.vendor="daemonless" \
+      org.opencontainers.image.authors="daemonless" \
+      io.daemonless.category="Utilities" \
+      io.daemonless.upstream-url="https://api.github.com/repos/jellyfin/jellyfin-ffmpeg/releases/latest" \
+      io.daemonless.upstream-jq=".tag_name" \
+      io.daemonless.arch="${FREEBSD_ARCH}"
+
+# Install the prebuilt pkg (auto-resolves runtime deps -> SBOM) and expose a
+# generic ffmpeg/ffprobe pointing at this line's binary, matching the :8 image.
+RUN pkg update && \
+    pkg install -y ${JFFMPEG_PORT} && \
+    pkg clean -ay && \
+    rm -rf /var/cache/pkg/* /var/db/pkg/repos/* && \
+    ln -sf /usr/local/bin/${JFFMPEG_PORT} /usr/local/bin/ffmpeg && \
+    ln -sf /usr/local/bin/$(echo ${JFFMPEG_PORT} | sed 's/ffmpeg/ffprobe/') /usr/local/bin/ffprobe && \
+    mkdir -p /app && pkg query '%v' ${JFFMPEG_PORT} > /app/version
+
+# CLI tool, not an s6 service.
+#   podman run --rm ghcr.io/daemonless/jellyfin-ffmpeg:7 -i in.mkv ... out.mp4
+ENTRYPOINT ["/usr/local/bin/ffmpeg"]

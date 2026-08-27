@@ -22,7 +22,7 @@ tonemapx / libplacebo filters) on FreeBSD. Ships both the 7.x and 8.x lines:
 ## Version Tags
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
-| `7` / `latest` | **Upstream Binary**. Built from official release. | Most users — recommended. |
+| `7` / `latest` | **FreeBSD Quarterly**. Uses stable, tested packages. | Most users — recommended. |
 | `8` | **Upstream Binary**. Built from official release. | Alternative build. |
 
 ## Prerequisites
