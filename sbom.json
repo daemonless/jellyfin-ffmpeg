@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-06T13:26:17Z",
+  "generated": "2026-09-06T21:38:37Z",
   "image": "jellyfin-ffmpeg",
   "tags": {
     "7-amd64": {
       "app_version": "7.1.4.3_1",
       "arch": "amd64",
-      "generated": "2026-09-06T13:11:55Z",
+      "generated": "2026-09-06T21:27:30Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -325,7 +325,7 @@
               "BSD2CLAUSE"
             ],
             "name": "dav1d",
-            "version": "1.5.3_1"
+            "version": "1.5.4"
           },
           {
             "licenses": [
@@ -626,7 +626,7 @@
               "MIT"
             ],
             "name": "libdeflate",
-            "version": "1.25"
+            "version": "1.26"
           },
           {
             "licenses": [
@@ -1252,7 +1252,7 @@
     "8-amd64": {
       "app_version": "8.1.2.4",
       "arch": "amd64",
-      "generated": "2026-09-06T13:24:58Z",
+      "generated": "2026-09-06T21:37:20Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
