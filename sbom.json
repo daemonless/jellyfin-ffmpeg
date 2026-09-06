@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-27T22:58:36Z",
+  "generated": "2026-09-06T12:12:10Z",
   "image": "jellyfin-ffmpeg",
   "tags": {
     "7-amd64": {
       "app_version": "7.1.4.3_1",
       "arch": "amd64",
-      "generated": "2026-08-27T22:46:04Z",
+      "generated": "2026-09-06T11:58:56Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -161,7 +161,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.1"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -189,7 +189,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p2"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -266,7 +266,7 @@
               "BSD2CLAUSE"
             ],
             "name": "aom",
-            "version": "3.14.1_1"
+            "version": "3.15.0"
           },
           {
             "licenses": [
@@ -302,7 +302,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.126.1"
+            "version": "3.127"
           },
           {
             "licenses": [
@@ -354,7 +354,7 @@
               "LGPL3+"
             ],
             "name": "ffmpeg",
-            "version": "8.1.2_2,1"
+            "version": "8.1.2_3,1"
           },
           {
             "licenses": [
@@ -535,7 +535,7 @@
               "APACHE20"
             ],
             "name": "lerc",
-            "version": "4.1.1"
+            "version": "4.2.0"
           },
           {
             "licenses": [
@@ -612,7 +612,7 @@
               "LGPL21"
             ],
             "name": "libbluray",
-            "version": "1.4.1,1"
+            "version": "1.5.0,1"
           },
           {
             "licenses": [
@@ -647,7 +647,7 @@
               "GPLv2"
             ],
             "name": "libdvdread",
-            "version": "7.0.0"
+            "version": "7.1.1"
           },
           {
             "licenses": [
@@ -712,7 +712,7 @@
               "BSD3CLAUSE"
             ],
             "name": "libopenmpt",
-            "version": "0.8.8"
+            "version": "0.8.9"
           },
           {
             "licenses": [
@@ -839,7 +839,7 @@
               "BSD3CLAUSE"
             ],
             "name": "libvpx",
-            "version": "1.16.0"
+            "version": "1.17.0"
           },
           {
             "licenses": [
@@ -931,14 +931,14 @@
               "BSD3CLAUSE"
             ],
             "name": "openexr",
-            "version": "3.4.15"
+            "version": "3.4.15_1"
           },
           {
             "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "openjph",
-            "version": "0.30.1"
+            "version": "0.31.0"
           },
           {
             "licenses": [
@@ -966,7 +966,7 @@
               "BSD3CLAUSE"
             ],
             "name": "pcre2",
-            "version": "10.47_1"
+            "version": "10.48"
           },
           {
             "licenses": [
@@ -1016,7 +1016,7 @@
               "APACHE20"
             ],
             "name": "py312-packaging",
-            "version": "26.2"
+            "version": "26.3"
           },
           {
             "licenses": [
@@ -1229,7 +1229,7 @@
           {
             "name": "packaging",
             "purl": "",
-            "version": "26.2"
+            "version": "26.3"
           }
         ],
         "ruby": [],
@@ -1250,9 +1250,9 @@
       }
     },
     "8-amd64": {
-      "app_version": "8.1.2.2_1",
+      "app_version": "8.1.2.3",
       "arch": "amd64",
-      "generated": "2026-08-27T22:57:25Z",
+      "generated": "2026-09-06T12:10:42Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1408,7 +1408,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.1"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -1436,7 +1436,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p2"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -1549,7 +1549,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.126.1"
+            "version": "3.127"
           },
           {
             "licenses": [
@@ -1572,7 +1572,7 @@
               "BSD2CLAUSE"
             ],
             "name": "dav1d",
-            "version": "1.5.3_1"
+            "version": "1.5.4"
           },
           {
             "licenses": [
@@ -1745,7 +1745,7 @@
               "GPLv2+"
             ],
             "name": "jellyfin-ffmpeg8",
-            "version": "8.1.2.2_1"
+            "version": "8.1.2.3"
           },
           {
             "licenses": [
