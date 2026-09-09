@@ -58,24 +58,21 @@ Save as `run.sh`, then run `sh run.sh`.
 ### Bastille
 
 > [!WARNING]
-> Bastille's OCI support is **experimental**. It requires `buildah` and shares the host network stack (`inherit`). Mount volumes with `--volume HOST JAIL`; without it, image-declared volumes are stored under `${bastille_volumesdir}/${jail}`.
+> Bastille's OCI support is **experimental**. It requires `buildah`, shares the host network stack (`inherit`), and persists image-declared volumes under `--data-path`.
 
 ```yaml
 services:
   jellyfin-ffmpeg:
-    name: jellyfin-ffmpeg
     image: "ghcr.io/daemonless/jellyfin-ffmpeg:latest"
-    network:
-      - mode: host
-    volumes:
-      - "/path/to/containers/jellyfin-ffmpeg/work:/work"
+    container_name: jellyfin-ffmpeg
+    network_mode: host  # jail shares host networking
 ```
 
-Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
+Save as `podman-compose.yml`, then run `bastille up`. Or via CLI:
 
 ```bash
 bastille create -O \
-  --volume /path/to/containers/jellyfin-ffmpeg/work /work \
+  --data-path /path/to/containers/jellyfin-ffmpeg \
   jellyfin-ffmpeg ghcr.io/daemonless/jellyfin-ffmpeg:latest inherit
 ```
 
