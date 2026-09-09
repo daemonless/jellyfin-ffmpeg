@@ -9,9 +9,9 @@ Source: dbuild templates
 [![Last Commit](https://img.shields.io/github/last-commit/daemonless/jellyfin-ffmpeg?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/jellyfin-ffmpeg/commits)
 
 FFmpeg with the Jellyfin patch set for HDR tone mapping (the SIMD-optimized
-tonemapx / libplacebo filters) on FreeBSD. Ships both the 7.x and 8.x lines:
-`jellyfin-ffmpeg` (= v7, the default) / `jellyfin-ffmpeg7` / `jellyfin-ffmpeg8`
-(and matching `*probe`) are all on PATH. Standalone CLI image, not a service.
+tonemapx / libplacebo filters) on FreeBSD. `latest` / `8` is the 8.x line
+(`jellyfin-ffmpeg8`); `7` is the 7.x line (`jellyfin-ffmpeg7`). In every tag
+`ffmpeg` / `ffprobe` point at that line's binaries. Standalone CLI image, not a service.
 
 | | |
 |---|---|
@@ -22,8 +22,8 @@ tonemapx / libplacebo filters) on FreeBSD. Ships both the 7.x and 8.x lines:
 ## Version Tags
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
-| `7` / `latest` | **FreeBSD Quarterly**. Uses stable, tested packages. | Most users — recommended. |
-| `8` | **Upstream Binary**. Built from official release. | Alternative build. |
+| `8` / `latest` | **FreeBSD Port**. 8.x line, compiled from the daemonless overlay port. | Most users — recommended. |
+| `7` | **FreeBSD Package**. 7.x line, official `jellyfin-ffmpeg7` pkg (latest branch). | Alternative build. |
 
 ## Prerequisites
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
@@ -58,21 +58,24 @@ Save as `run.sh`, then run `sh run.sh`.
 ### Bastille
 
 > [!WARNING]
-> Bastille's OCI support is **experimental**. It requires `buildah`, shares the host network stack (`inherit`), and persists image-declared volumes under `--data-path`.
+> Bastille's OCI support is **experimental**. It requires `buildah` and shares the host network stack (`inherit`). Mount volumes with `--volume HOST JAIL`; without it, image-declared volumes are stored under `${bastille_volumesdir}/${jail}`.
 
 ```yaml
 services:
   jellyfin-ffmpeg:
+    name: jellyfin-ffmpeg
     image: "ghcr.io/daemonless/jellyfin-ffmpeg:latest"
-    container_name: jellyfin-ffmpeg
-    network_mode: host  # jail shares host networking
+    network:
+      - mode: host
+    volumes:
+      - "/path/to/containers/jellyfin-ffmpeg/work:/work"
 ```
 
-Save as `podman-compose.yml`, then run `bastille up`. Or via CLI:
+Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
 
 ```bash
 bastille create -O \
-  --data-path /path/to/containers/jellyfin-ffmpeg \
+  --volume /path/to/containers/jellyfin-ffmpeg/work /work \
   jellyfin-ffmpeg ghcr.io/daemonless/jellyfin-ffmpeg:latest inherit
 ```
 

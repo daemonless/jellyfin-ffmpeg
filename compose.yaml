@@ -7,9 +7,9 @@ x-daemonless:
   user: "root"  # one-shot CLI ffmpeg; runs as root, override with `--user` if desired
   description: |-
     FFmpeg with the Jellyfin patch set for HDR tone mapping (the SIMD-optimized
-    tonemapx / libplacebo filters) on FreeBSD. Ships both the 7.x and 8.x lines:
-    `jellyfin-ffmpeg` (= v7, the default) / `jellyfin-ffmpeg7` / `jellyfin-ffmpeg8`
-    (and matching `*probe`) are all on PATH. Standalone CLI image, not a service.
+    tonemapx / libplacebo filters) on FreeBSD. `latest` / `8` is the 8.x line
+    (`jellyfin-ffmpeg8`); `7` is the 7.x line (`jellyfin-ffmpeg7`). In every tag
+    `ffmpeg` / `ffprobe` point at that line's binaries. Standalone CLI image, not a service.
   upstream_url: "https://github.com/jellyfin/jellyfin-ffmpeg"
   web_url: "https://jellyfin.org/"
   community: "Discord:https://discord.gg/Kb9tkhecZT"

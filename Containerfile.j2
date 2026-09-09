@@ -2,9 +2,11 @@
 {%- set runtime_deps = "libass libbluray chromaprint dav1d fdk-aac fontconfig freetype2 fribidi gmp harfbuzz lame libopenmpt opus libplacebo shaderc svt-av1 libtheora libvorbis libvpx vulkan-loader webp libx264 x265 sekrit-twc-zimg libzvbi gnutls libxml2 libiconv libva libdrm libvdpau libX11 alsa-lib sndio" -%}
 ARG BASE_VERSION=15.1
 ARG FREEBSD_ARCH=amd64
-# Which overlay port this tag builds. Selected per variant (:7 / :8) in
-# .daemonless/config.yaml; jellyfin-ffmpeg7 also carries the unversioned alias.
-ARG JFFMPEG_PORT=jellyfin-ffmpeg7
+# Which overlay port this tag builds, and the versioned binary name it installs
+# (the port is named jellyfin-ffmpeg but ships bin/jellyfin-ffmpeg8). Both set
+# per variant in .daemonless/config.yaml; :8 carries the `latest` alias.
+ARG JFFMPEG_PORT=jellyfin-ffmpeg
+ARG JFFMPEG_BIN=jellyfin-ffmpeg8
 
 # ---------------------------------------------------------------------------
 # Stage 1: compile the selected jellyfin-ffmpeg overlay port and package it.
@@ -44,6 +46,7 @@ RUN cd /usr/ports/multimedia/${JFFMPEG_PORT} && \
 # ---------------------------------------------------------------------------
 FROM ghcr.io/daemonless/base:${BASE_VERSION}
 ARG JFFMPEG_PORT
+ARG JFFMPEG_BIN
 
 LABEL org.opencontainers.image.title="Jellyfin FFmpeg" \
       org.opencontainers.image.description="FFmpeg with Jellyfin patches for HDR tone mapping (tonemapx/libplacebo) on FreeBSD" \
@@ -64,11 +67,11 @@ COPY --from=builder /packages/ /tmp/pkgs/
 RUN pkg install -y /tmp/pkgs/${JFFMPEG_PORT}-*.pkg && \
     rm -rf /tmp/pkgs && \
     pkg clean -ay && \
-    ln -sf /usr/local/bin/${JFFMPEG_PORT} /usr/local/bin/ffmpeg && \
-    ln -sf /usr/local/bin/$(echo ${JFFMPEG_PORT} | sed 's/ffmpeg/ffprobe/') /usr/local/bin/ffprobe && \
+    ln -sf /usr/local/bin/${JFFMPEG_BIN} /usr/local/bin/ffmpeg && \
+    ln -sf /usr/local/bin/$(echo ${JFFMPEG_BIN} | sed 's/ffmpeg/ffprobe/') /usr/local/bin/ffprobe && \
     mkdir -p /app && pkg query '%v' ${JFFMPEG_PORT} > /app/version
 
 # CLI tool, not an s6 service. `ffmpeg` = this tag's jellyfin-ffmpeg line;
-# the versioned jellyfin-ffmpeg7 / jellyfin-ffmpeg8 binaries are also on PATH.
-#   podman run --rm ghcr.io/daemonless/jellyfin-ffmpeg:7 -i in.mkv ... out.mp4
+# the versioned binary (jellyfin-ffmpeg8) is also on PATH.
+#   podman run --rm ghcr.io/daemonless/jellyfin-ffmpeg:latest -i in.mkv ... out.mp4
 ENTRYPOINT ["/usr/local/bin/ffmpeg"]
