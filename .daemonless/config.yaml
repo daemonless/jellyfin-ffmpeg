@@ -4,7 +4,7 @@ build:
     - aarch64
   variants:
     - tag: "8"
-      containerfile: Containerfile
+      containerfile: Containerfile.pkg
       args:
         JFFMPEG_PORT: jellyfin-ffmpeg
         JFFMPEG_BIN: jellyfin-ffmpeg8
