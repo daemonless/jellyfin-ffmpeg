@@ -3,19 +3,24 @@ build:
     - amd64
     - aarch64
   variants:
-    - tag: "8"
+    # <major>-pkg-latest + per-variant pkg_name: the status page tracks each line
+    # against its FreeBSD package (per arch), not jellyfin's GitHub releases.
+    - tag: "8-pkg-latest"
+      pkg_name: jellyfin-ffmpeg
       containerfile: Containerfile.pkg
       args:
         JFFMPEG_PORT: jellyfin-ffmpeg
         JFFMPEG_BIN: jellyfin-ffmpeg8
-      aliases: ["latest"]
+      aliases: ["8", "latest"]
       default: true
-      tag_desc: "**FreeBSD Port**. 8.x line, compiled from the daemonless overlay port."
-    - tag: "7"
+      tag_desc: "**FreeBSD Package**. 8.x line, official `jellyfin-ffmpeg` pkg (latest branch)."
+    - tag: "7-pkg-latest"
+      pkg_name: jellyfin-ffmpeg7
       containerfile: Containerfile.pkg
       args:
         JFFMPEG_PORT: jellyfin-ffmpeg7
         JFFMPEG_BIN: jellyfin-ffmpeg7
+      aliases: ["7"]
       tag_desc: "**FreeBSD Package**. 7.x line, official `jellyfin-ffmpeg7` pkg (latest branch)."
 
 cit:

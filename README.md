@@ -23,8 +23,8 @@ tonemapx / libplacebo filters) on FreeBSD. `latest` / `8` is the 8.x line
 ## Version Tags
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
-| `8` / `latest` | **FreeBSD Port**. 8.x line, compiled from the daemonless overlay port. | Most users — recommended. |
-| `7` | **FreeBSD Package**. 7.x line, official `jellyfin-ffmpeg7` pkg (latest branch). | Alternative build. |
+| `8` / `8-pkg-latest` / `latest` | **FreeBSD Package**. 8.x line, official `jellyfin-ffmpeg` pkg (latest branch). | Most users — recommended. |
+| `7` / `7-pkg-latest` | **FreeBSD Package**. 7.x line, official `jellyfin-ffmpeg7` pkg (latest branch). | Alternative build. |
 
 ## Prerequisites
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.

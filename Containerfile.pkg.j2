@@ -1,9 +1,8 @@
 ARG BASE_VERSION=15-latest
 ARG FREEBSD_ARCH=amd64
-# jellyfin-ffmpeg7 ships as an official FreeBSD pkg (multimedia/jellyfin-ffmpeg7)
-# in the *latest* branch, so the :7 line installs it directly instead of
-# compiling a port from source. base:15-latest is required because the pkg is
-# not in the quarterly repo. The :8 line (latest) has no pkg -> Containerfile.
+# Both lines install official FreeBSD pkgs (multimedia/jellyfin-ffmpeg for :8,
+# multimedia/jellyfin-ffmpeg7 for :7). base:15-latest is required because
+# neither pkg is in the quarterly repo.
 ARG JFFMPEG_PORT=jellyfin-ffmpeg7
 ARG JFFMPEG_BIN=jellyfin-ffmpeg7
 
@@ -19,8 +18,6 @@ LABEL org.opencontainers.image.title="Jellyfin FFmpeg" \
       org.opencontainers.image.vendor="daemonless" \
       org.opencontainers.image.authors="daemonless" \
       io.daemonless.category="Utilities" \
-      io.daemonless.upstream-url="https://api.github.com/repos/jellyfin/jellyfin-ffmpeg/releases/latest" \
-      io.daemonless.upstream-jq=".tag_name" \
       io.daemonless.arch="${FREEBSD_ARCH}"
 
 # Install the prebuilt pkg (auto-resolves runtime deps -> SBOM) and expose a
