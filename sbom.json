@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-24T22:09:36Z",
+  "generated": "2026-09-25T15:56:09Z",
   "image": "jellyfin-ffmpeg",
   "tags": {
-    "7-amd64": {
+    "7-pkg-latest-amd64": {
       "app_version": "7.1.4.3_1",
       "arch": "amd64",
-      "generated": "2026-09-24T22:08:18Z",
+      "generated": "2026-09-25T15:54:24Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1365,10 +1365,10 @@
         "total": 191
       }
     },
-    "8-amd64": {
+    "8-pkg-latest-amd64": {
       "app_version": "8.1.2.5",
       "arch": "amd64",
-      "generated": "2026-09-24T22:08:05Z",
+      "generated": "2026-09-25T15:52:59Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
