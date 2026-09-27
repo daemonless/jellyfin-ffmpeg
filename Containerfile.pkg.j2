@@ -9,6 +9,7 @@ ARG JFFMPEG_BIN=jellyfin-ffmpeg7
 FROM ghcr.io/daemonless/base:${BASE_VERSION}
 ARG JFFMPEG_PORT
 ARG JFFMPEG_BIN
+ARG FREEBSD_ARCH
 
 LABEL org.opencontainers.image.title="Jellyfin FFmpeg" \
       org.opencontainers.image.description="FFmpeg with Jellyfin patches for HDR tone mapping (tonemapx/libplacebo) on FreeBSD" \
