@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-28T18:46:03Z",
+  "generated": "2026-09-29T17:04:03Z",
   "image": "jellyfin-ffmpeg",
   "tags": {
     "7-pkg-latest-aarch64": {
       "app_version": "7.1.4.3_1",
       "arch": "aarch64",
-      "generated": "2026-09-28T18:44:19Z",
+      "generated": "2026-09-29T17:02:17Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1117,7 +1117,7 @@
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.14"
+            "version": "3.12.14_1"
           },
           {
             "licenses": [
@@ -1359,9 +1359,9 @@
       }
     },
     "8-pkg-latest-aarch64": {
-      "app_version": "8.1.2.5",
+      "app_version": "8.1.2.5_1",
       "arch": "aarch64",
-      "generated": "2026-09-28T18:44:12Z",
+      "generated": "2026-09-29T17:02:12Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1796,7 +1796,7 @@
               "GPLv2+"
             ],
             "name": "jellyfin-ffmpeg",
-            "version": "8.1.2.5"
+            "version": "8.1.2.5_1"
           },
           {
             "licenses": [
@@ -2157,8 +2157,22 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
+            "name": "ocl-icd",
+            "version": "2.3.5"
+          },
+          {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "oniguruma",
             "version": "6.9.10"
+          },
+          {
+            "licenses": [
+              "APACHE20"
+            ],
+            "name": "opencl",
+            "version": "3.1.1"
           },
           {
             "licenses": [
@@ -2258,7 +2272,7 @@
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.14"
+            "version": "3.12.14_1"
           },
           {
             "licenses": [
@@ -2406,7 +2420,7 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 140,
+        "freebsd": 142,
         "go": 0,
         "java": 0,
         "node": 0,
@@ -2414,7 +2428,7 @@
         "python": 5,
         "ruby": 0,
         "rust": 0,
-        "total": 145
+        "total": 147
       }
     }
   }
