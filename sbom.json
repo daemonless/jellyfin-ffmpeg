@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-27T20:43:14Z",
+  "generated": "2026-09-29T14:26:43Z",
   "image": "jellyfin-ffmpeg",
   "tags": {
     "7-pkg-latest-amd64": {
       "app_version": "7.1.4.3_1",
       "arch": "amd64",
-      "generated": "2026-09-27T20:42:02Z",
+      "generated": "2026-09-29T14:25:32Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1368,7 +1368,7 @@
     "8-pkg-latest-amd64": {
       "app_version": "8.1.2.5_1",
       "arch": "amd64",
-      "generated": "2026-09-27T20:41:00Z",
+      "generated": "2026-09-29T14:25:25Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
