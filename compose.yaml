@@ -4,6 +4,7 @@ x-daemonless:
   title: "Jellyfin FFmpeg"
   icon: ":material-video-box:"  # https://pictogrammers.com/library/mdi/
   category: "Utilities"
+  class: "cli"  # a tool that runs and exits: usage, not a deployment
   user: "root"  # one-shot CLI ffmpeg; runs as root, override with `--user` if desired
   description: |-
     FFmpeg with the Jellyfin patch set for HDR tone mapping (the SIMD-optimized
