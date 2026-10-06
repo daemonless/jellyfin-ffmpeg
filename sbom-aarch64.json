@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-29T17:04:03Z",
+  "generated": "2026-10-06T08:34:11Z",
   "image": "jellyfin-ffmpeg",
   "tags": {
     "7-pkg-latest-aarch64": {
       "app_version": "7.1.4.3_1",
       "arch": "aarch64",
-      "generated": "2026-09-29T17:02:17Z",
+      "generated": "2026-10-06T08:32:46Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -259,7 +259,7 @@
               "BSD3CLAUSE"
             ],
             "name": "Imath",
-            "version": "3.2.3"
+            "version": "3.2.3_1"
           },
           {
             "licenses": [
@@ -295,7 +295,7 @@
               "BSL"
             ],
             "name": "boost-libs",
-            "version": "1.91.0"
+            "version": "1.92.0"
           },
           {
             "licenses": [
@@ -368,7 +368,7 @@
               "LGPL3+"
             ],
             "name": "ffmpeg",
-            "version": "9.0.1,1"
+            "version": "9.0.2,1"
           },
           {
             "licenses": [
@@ -400,7 +400,7 @@
               "LGPL21"
             ],
             "name": "fribidi",
-            "version": "1.0.16"
+            "version": "1.0.17"
           },
           {
             "licenses": [
@@ -1024,7 +1024,7 @@
               "BSD3CLAUSE"
             ],
             "name": "pcre2",
-            "version": "10.48"
+            "version": "10.49"
           },
           {
             "licenses": [
@@ -1059,7 +1059,7 @@
               "BSL"
             ],
             "name": "py312-boost-libs",
-            "version": "1.91.0"
+            "version": "1.92.0"
           },
           {
             "licenses": [
@@ -1361,7 +1361,7 @@
     "8-pkg-latest-aarch64": {
       "app_version": "8.1.2.5_1",
       "arch": "aarch64",
-      "generated": "2026-09-29T17:02:12Z",
+      "generated": "2026-10-06T08:32:41Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1697,7 +1697,7 @@
               "LGPL21"
             ],
             "name": "fribidi",
-            "version": "1.0.16"
+            "version": "1.0.17"
           },
           {
             "licenses": [
@@ -2193,7 +2193,7 @@
               "BSD3CLAUSE"
             ],
             "name": "pcre2",
-            "version": "10.48"
+            "version": "10.49"
           },
           {
             "licenses": [
