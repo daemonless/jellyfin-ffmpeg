@@ -26,74 +26,18 @@ tonemapx / libplacebo filters) on FreeBSD. `latest` / `8` is the 8.x line
 | `8` / `8-pkg-latest` / `latest` | **FreeBSD Package**. 8.x line, official `jellyfin-ffmpeg` pkg (latest branch). | Most users — recommended. |
 | `7` / `7-pkg-latest` | **FreeBSD Package**. 7.x line, official `jellyfin-ffmpeg7` pkg (latest branch). | Alternative build. |
 
-## Prerequisites
-Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
-
 ## Deployment
-
-### Podman Compose
-
-```yaml
-services:
-  jellyfin-ffmpeg:
-    image: "ghcr.io/daemonless/jellyfin-ffmpeg:latest"
-    container_name: jellyfin-ffmpeg
-    volumes:
-      - "/path/to/containers/jellyfin-ffmpeg/work:/work"
-    # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
-    restart: always
-```
-
-Save as `compose.yaml`, then run `podman-compose up -d`.
 
 ### Podman CLI
 
-```bash
-podman run -d --name jellyfin-ffmpeg \
-  -v /path/to/containers/jellyfin-ffmpeg/work:/work \
-  ghcr.io/daemonless/jellyfin-ffmpeg:latest
-```
+Run it like ffmpeg itself; the entrypoint is the jellyfin-ffmpeg binary:
 
-Save as `run.sh`, then run `sh run.sh`.
+    podman run --rm -v "$PWD:/work" -w /work \
+      ghcr.io/daemonless/jellyfin-ffmpeg:latest -i input.mkv output.mp4
 
-### Bastille
+Check the build:
 
-> [!WARNING]
-> Bastille's OCI support is **experimental**. It requires `buildah` and shares the host network stack (`inherit`). Mount volumes with `--volume HOST JAIL`; without it, image-declared volumes are stored under `${bastille_volumesdir}/${jail}`.
-
-```yaml
-services:
-  jellyfin-ffmpeg:
-    name: jellyfin-ffmpeg
-    image: "ghcr.io/daemonless/jellyfin-ffmpeg:latest"
-    network:
-      - mode: host
-    volumes:
-      - "/path/to/containers/jellyfin-ffmpeg/work:/work"
-```
-
-Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
-
-```bash
-bastille create -O \
-  --volume /path/to/containers/jellyfin-ffmpeg/work /work \
-  jellyfin-ffmpeg ghcr.io/daemonless/jellyfin-ffmpeg:latest inherit
-```
-
-### Ansible
-
-```yaml
-- name: Deploy jellyfin-ffmpeg
-  containers.podman.podman_container:
-    name: jellyfin-ffmpeg
-    image: "ghcr.io/daemonless/jellyfin-ffmpeg:latest"
-    state: started
-    restart_policy: always
-    volumes:
-      - "/path/to/containers/jellyfin-ffmpeg/work:/work"
-```
-
-Save as `jellyfin-ffmpeg-deploy.yaml`, then run `ansible-playbook jellyfin-ffmpeg-deploy.yaml`.
+    podman run --rm ghcr.io/daemonless/jellyfin-ffmpeg:latest -version
 
 ## Parameters
 
