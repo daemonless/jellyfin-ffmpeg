@@ -1,12 +1,12 @@
 ARG BASE_VERSION=15-latest
 ARG FREEBSD_ARCH=amd64
 # Both lines install official FreeBSD pkgs (multimedia/jellyfin-ffmpeg for :8,
-# multimedia/jellyfin-ffmpeg7 for :7). base:15-latest is required because
+# multimedia/jellyfin-ffmpeg7 for :7). base-core:15-latest is required because
 # neither pkg is in the quarterly repo.
 ARG JFFMPEG_PORT=jellyfin-ffmpeg7
 ARG JFFMPEG_BIN=jellyfin-ffmpeg7
 
-FROM ghcr.io/daemonless/base:${BASE_VERSION}
+FROM ghcr.io/daemonless/base-core:${BASE_VERSION}
 ARG JFFMPEG_PORT
 ARG JFFMPEG_BIN
 ARG FREEBSD_ARCH
@@ -32,6 +32,6 @@ RUN pkg update && \
     ln -sf /usr/local/bin/$(echo ${JFFMPEG_BIN} | sed 's/ffmpeg/ffprobe/') /usr/local/bin/ffprobe && \
     mkdir -p /app && pkg query '%v' ${JFFMPEG_PORT} > /app/version
 
-# CLI tool, not an s6 service.
+# CLI tool: no init, no service.
 #   podman run --rm ghcr.io/daemonless/jellyfin-ffmpeg:7 -i in.mkv ... out.mp4
 ENTRYPOINT ["/usr/local/bin/ffmpeg"]
