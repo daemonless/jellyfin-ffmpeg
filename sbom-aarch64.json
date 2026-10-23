@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-21T22:35:53Z",
+  "generated": "2026-10-23T11:19:46Z",
   "image": "jellyfin-ffmpeg",
   "tags": {
     "7-pkg-latest-aarch64": {
-      "app_version": "7.1.4.3_3",
+      "app_version": "7.1.4.3_4",
       "arch": "aarch64",
-      "generated": "2026-10-21T22:34:22Z",
+      "generated": "2026-10-23T11:18:12Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -49,13 +49,6 @@
               "CDDL-1.0"
             ],
             "name": "FreeBSD-ctf-lib",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
-            "name": "FreeBSD-devmatch",
             "version": "15.1"
           },
           {
@@ -256,46 +249,10 @@
           },
           {
             "licenses": [
-              "BSD3CLAUSE"
-            ],
-            "name": "Imath",
-            "version": "3.2.3_1"
-          },
-          {
-            "licenses": [
               "LGPL21+"
             ],
             "name": "alsa-lib",
             "version": "1.2.16.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
-            "name": "aom",
-            "version": "3.15.1"
-          },
-          {
-            "licenses": [
-              "GPLv3+"
-            ],
-            "name": "bash",
-            "version": "5.3.20"
-          },
-          {
-            "licenses": [
-              "LGPL3",
-              "GPLv3"
-            ],
-            "name": "binutils",
-            "version": "2.44,1"
-          },
-          {
-            "licenses": [
-              "BSL"
-            ],
-            "name": "boost-libs",
-            "version": "1.92.0"
           },
           {
             "licenses": [
@@ -321,14 +278,6 @@
           },
           {
             "licenses": [
-              "MIT",
-              "LGPL21"
-            ],
-            "name": "chromaprint",
-            "version": "1.6.0_1"
-          },
-          {
-            "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "dav1d",
@@ -343,13 +292,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
-          },
-          {
-            "licenses": [
               "MIT"
             ],
             "name": "expat",
@@ -361,14 +303,6 @@
             ],
             "name": "fdk-aac",
             "version": "3.0.0"
-          },
-          {
-            "licenses": [
-              "GPLv3+",
-              "LGPL3+"
-            ],
-            "name": "ffmpeg",
-            "version": "9.0.2_2,1"
           },
           {
             "licenses": [
@@ -401,21 +335,6 @@
             ],
             "name": "fribidi",
             "version": "1.0.17"
-          },
-          {
-            "licenses": [
-              "GPLv3",
-              "GPLv3RLE"
-            ],
-            "name": "gcc14",
-            "version": "14.2.0_7"
-          },
-          {
-            "licenses": [
-              "LGPL20+"
-            ],
-            "name": "gdk-pixbuf2",
-            "version": "2.44.1"
           },
           {
             "licenses": [
@@ -476,14 +395,7 @@
               "MIT"
             ],
             "name": "harfbuzz",
-            "version": "14.2.1"
-          },
-          {
-            "licenses": [
-              "APACHE20"
-            ],
-            "name": "highway",
-            "version": "1.4.0"
+            "version": "14.6.0"
           },
           {
             "licenses": [
@@ -492,13 +404,6 @@
             ],
             "name": "hwdata",
             "version": "0.412,1"
-          },
-          {
-            "licenses": [
-              "ICU"
-            ],
-            "name": "icu",
-            "version": "76.1,1"
           },
           {
             "licenses": [
@@ -528,7 +433,7 @@
               "GPLv2+"
             ],
             "name": "jellyfin-ffmpeg7",
-            "version": "7.1.4.3_3"
+            "version": "7.1.4.3_4"
           },
           {
             "licenses": [
@@ -586,7 +491,7 @@
               "MIT"
             ],
             "name": "libX11",
-            "version": "1.8.13_1,1"
+            "version": "1.8.14,1"
           },
           {
             "licenses": [
@@ -620,13 +525,6 @@
             "licenses": [
               "MIT"
             ],
-            "name": "libXft",
-            "version": "2.3.9"
-          },
-          {
-            "licenses": [
-              "MIT"
-            ],
             "name": "libXrandr",
             "version": "1.5.5"
           },
@@ -635,14 +533,7 @@
               "MIT"
             ],
             "name": "libXrender",
-            "version": "0.9.12"
-          },
-          {
-            "licenses": [
-              "MIT"
-            ],
-            "name": "libXv",
-            "version": "1.0.13,1"
+            "version": "0.9.13"
           },
           {
             "licenses": [
@@ -660,13 +551,6 @@
           },
           {
             "licenses": [
-              "LGPL21+"
-            ],
-            "name": "libdatrie",
-            "version": "0.2.14_1"
-          },
-          {
-            "licenses": [
               "MIT"
             ],
             "name": "libdeflate",
@@ -678,20 +562,6 @@
             ],
             "name": "libdrm",
             "version": "2.4.134,1"
-          },
-          {
-            "licenses": [
-              "GPLv2"
-            ],
-            "name": "libdvdnav",
-            "version": "7.0.0"
-          },
-          {
-            "licenses": [
-              "GPLv2"
-            ],
-            "name": "libdvdread",
-            "version": "7.1.1"
           },
           {
             "licenses": [
@@ -731,13 +601,6 @@
           },
           {
             "licenses": [
-              "BSD3CLAUSE"
-            ],
-            "name": "libjxl",
-            "version": "0.12.0"
-          },
-          {
-            "licenses": [
               "BSD2CLAUSE",
               "GPLv2"
             ],
@@ -774,13 +637,6 @@
           },
           {
             "licenses": [
-              "LGPL20"
-            ],
-            "name": "librsvg2-rust",
-            "version": "2.62.3_3"
-          },
-          {
-            "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "libsamplerate",
@@ -810,24 +666,10 @@
           },
           {
             "licenses": [
-              "LGPL21+"
-            ],
-            "name": "libthai",
-            "version": "0.1.30"
-          },
-          {
-            "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "libtheora",
             "version": "1.2.0_1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
-            "name": "libudev-devd",
-            "version": "0.7.0"
           },
           {
             "licenses": [
@@ -862,14 +704,6 @@
             ],
             "name": "libunwind",
             "version": "20250904"
-          },
-          {
-            "licenses": [
-              "LGPL21",
-              "GPLv2"
-            ],
-            "name": "libv4l",
-            "version": "1.23.0_5"
           },
           {
             "licenses": [
@@ -936,24 +770,10 @@
           },
           {
             "licenses": [
-              "LGPL3+"
-            ],
-            "name": "mpc",
-            "version": "1.4.1"
-          },
-          {
-            "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "mpdecimal",
             "version": "4.0.1"
-          },
-          {
-            "licenses": [
-              "LGPL3+"
-            ],
-            "name": "mpfr",
-            "version": "4.2.2,1"
           },
           {
             "licenses": [
@@ -981,27 +801,6 @@
             "licenses": [
               "BSD3CLAUSE"
             ],
-            "name": "openblas",
-            "version": "0.3.34_1,2"
-          },
-          {
-            "licenses": [
-              "BSD3CLAUSE"
-            ],
-            "name": "openexr",
-            "version": "3.4.16"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
-            "name": "openjph",
-            "version": "0.32.0"
-          },
-          {
-            "licenses": [
-              "BSD3CLAUSE"
-            ],
             "name": "opus",
             "version": "1.6.1"
           },
@@ -1011,13 +810,6 @@
             ],
             "name": "p11-kit",
             "version": "0.26.5_1"
-          },
-          {
-            "licenses": [
-              "LGPL21+"
-            ],
-            "name": "pango",
-            "version": "1.57.1"
           },
           {
             "licenses": [
@@ -1056,24 +848,10 @@
           },
           {
             "licenses": [
-              "BSL"
-            ],
-            "name": "py312-boost-libs",
-            "version": "1.92.0"
-          },
-          {
-            "licenses": [
               "MIT"
             ],
             "name": "py312-dbus",
             "version": "1.4.0_1"
-          },
-          {
-            "licenses": [
-              "BSD3CLAUSE"
-            ],
-            "name": "py312-numpy",
-            "version": "2.4.6_1,1"
           },
           {
             "licenses": [
@@ -1128,13 +906,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
               "WTFPL"
             ],
             "name": "sekrit-twc-zimg",
@@ -1149,31 +920,10 @@
           },
           {
             "licenses": [
-              "GPLv2"
-            ],
-            "name": "shared-mime-info",
-            "version": "2.4_2"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
-          },
-          {
-            "licenses": [
               "ISCL"
             ],
             "name": "sndio",
             "version": "1.10.0_1"
-          },
-          {
-            "licenses": [
-              "LGPL21"
-            ],
-            "name": "srt",
-            "version": "1.5.7_1"
           },
           {
             "licenses": [
@@ -1190,13 +940,6 @@
             ],
             "name": "tiff",
             "version": "4.7.2"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE+PATENT"
-            ],
-            "name": "vmaf",
-            "version": "3.2.1"
           },
           {
             "licenses": [
@@ -1251,63 +994,7 @@
         ],
         "go": [],
         "java": [],
-        "node": [
-          {
-            "name": "@jupyterlite/app",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-consoles",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-edit",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-lab",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-notebooks",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-repl",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-tree",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/pyodide-kernel-extension",
-            "purl": "",
-            "version": "0.5.2"
-          },
-          {
-            "name": "MathJax-grunt-cleaner",
-            "purl": "",
-            "version": "0.1.0"
-          },
-          {
-            "name": "jupyterlab-jupytext",
-            "purl": "",
-            "version": "1.4.5"
-          },
-          {
-            "name": "jupyterlab_pygments",
-            "purl": "",
-            "version": "0.3.0"
-          }
-        ],
+        "node": [],
         "php": [],
         "python": [
           {
@@ -1319,11 +1006,6 @@
             "name": "example",
             "purl": "",
             "version": "21.12"
-          },
-          {
-            "name": "numpy",
-            "purl": "",
-            "version": "2.4.6"
           },
           {
             "name": "packaging",
@@ -1347,21 +1029,21 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 173,
+        "freebsd": 137,
         "go": 0,
         "java": 0,
-        "node": 11,
+        "node": 0,
         "php": 0,
-        "python": 6,
+        "python": 5,
         "ruby": 0,
         "rust": 0,
-        "total": 190
+        "total": 142
       }
     },
     "8-pkg-latest-aarch64": {
-      "app_version": "8.1.3.1_2",
+      "app_version": "8.1.3.1_3",
       "arch": "aarch64",
-      "generated": "2026-10-21T22:34:18Z",
+      "generated": "2026-10-23T11:18:07Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1648,13 +1330,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
-          },
-          {
-            "licenses": [
               "MIT"
             ],
             "name": "expat",
@@ -1758,7 +1433,7 @@
               "MIT"
             ],
             "name": "harfbuzz",
-            "version": "14.2.1"
+            "version": "14.6.0"
           },
           {
             "licenses": [
@@ -1796,7 +1471,7 @@
               "GPLv2+"
             ],
             "name": "jellyfin-ffmpeg",
-            "version": "8.1.3.1_2"
+            "version": "8.1.3.1_3"
           },
           {
             "licenses": [
@@ -1854,7 +1529,7 @@
               "MIT"
             ],
             "name": "libX11",
-            "version": "1.8.13_1,1"
+            "version": "1.8.14,1"
           },
           {
             "licenses": [
@@ -1896,7 +1571,7 @@
               "MIT"
             ],
             "name": "libXrender",
-            "version": "0.9.12"
+            "version": "0.9.13"
           },
           {
             "licenses": [
@@ -2283,13 +1958,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
               "WTFPL"
             ],
             "name": "sekrit-twc-zimg",
@@ -2301,13 +1969,6 @@
             ],
             "name": "shaderc",
             "version": "2026.4_1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
           },
           {
             "licenses": [
@@ -2420,7 +2081,7 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 142,
+        "freebsd": 139,
         "go": 0,
         "java": 0,
         "node": 0,
@@ -2428,7 +2089,7 @@
         "python": 5,
         "ruby": 0,
         "rust": 0,
-        "total": 147
+        "total": 144
       }
     }
   }
